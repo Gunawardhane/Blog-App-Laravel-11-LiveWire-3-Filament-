@@ -13,6 +13,16 @@ class Post extends Model
     use SoftDeletes;
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'title',
+        'slug',
+        'image',
+        'body',
+        'published_at',
+        'featured',
+    ];
+
     protected function casts(): array
     {
         return [
@@ -22,6 +32,10 @@ class Post extends Model
 
     public function author(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
     }
 
     public function scopePublished($query){
