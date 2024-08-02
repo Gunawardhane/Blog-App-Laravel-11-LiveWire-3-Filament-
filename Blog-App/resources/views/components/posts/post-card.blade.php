@@ -1,7 +1,7 @@
 @props(['post'])
 <div>
     <div {{ $attributes }}>
-        <a href="#">
+        <a wire:navigate href="{{ route('posts.show', $post->slug) }}">
             <div>
                 <img class="w-full rounded-xl" src="{{ $post->getThumbnailUrl() }}">
             </div>
@@ -18,6 +18,7 @@
             </div>
             <a href="#" class="text-xl font-bold text-gray-900">{{ $post->title }}</a>
         </div>
-
+        <a wire:navigate href="{{ route('posts.show', $post->slug) }}"
+            class="text-xl font-bold text-gray-900">{{ $post->title }}</a>
     </div>
 </div>
