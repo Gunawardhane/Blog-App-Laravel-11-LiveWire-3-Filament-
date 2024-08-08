@@ -24,6 +24,10 @@ class Post extends Model
         'featured',
     ];
 
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
     protected function casts(): array
     {
         return [
