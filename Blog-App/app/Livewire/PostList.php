@@ -41,7 +41,7 @@ class PostList extends Component
         $this->resetPage();
     }
 
-    #[Computed]
+    #[Computed()]
     public function posts(){
         return Post::published()
                     ->orderBy('published_at', $this->sort)
@@ -52,7 +52,7 @@ class PostList extends Component
                     ->paginate(3);
     }
 
-    #[Computed]
+    #[Computed()]
     public function activeCategory(){
         return Category::where('slug', $this->category)->first();
     }

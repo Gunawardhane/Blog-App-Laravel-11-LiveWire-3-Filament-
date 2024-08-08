@@ -13,7 +13,7 @@
                 @endif
                 <p class="text-gray-500 text-sm">{{ $post->published_at }}</p>
             </div>
-            <a href="#" class="text-xl font-bold text-gray-900">{{ $post->title }}</a>
+            {{-- <a href="#" class="text-xl font-bold text-gray-900">{{ $post->title }}</a> --}}
         </div>
         <a wire:navigate href="{{ route('posts.show', $post->slug) }}"
             class="text-xl font-bold text-gray-900">{{ $post->title }}</a>
