@@ -76,4 +76,13 @@ class Post extends Model
         return $this->belongsToMany(User::class, 'post_like')->withTimestamps();
     }
 
+    public function scopePopular($query){
+       $query->withCount('likes')
+        ->orderBy("likes_count", 'desc');
+    }
+
+    public function scopeSearch($query, $search = '') {
+        $query->where('title', 'like', "%{$search}%");
+    }
+
 }
