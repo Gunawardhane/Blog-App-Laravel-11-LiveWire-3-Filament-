@@ -6,14 +6,14 @@
             </h1>
             <p class="text-gray-500 text-lg mt-1">Best Blog in the universe</p>
             <a class="px-3 py-2 text-lg text-white bg-gray-800 rounded mt-5 inline-block"
-                href="http://127.0.0.1:8000/blog">Start
+                href="{{ route('posts.index') }}">Start
                 Reading</a>
         </div>
     @endsection
 
     <div class="w-full mb-10">
         <div class="mb-16">
-            <h2 class="mt-16 mb-5 text-3xl font-bold text-yellow-500"> Featured Posts </h2>
+            <h2 class="mt-16 mb-5 text-3xl font-bold text-yellow-500"> {{ __('home.featured_posts') }} </h2>
             <div class="w-full">
                 <div class="grid w-full grid-cols-3 gap-10">
                     @foreach ($featuredPosts as $post)
